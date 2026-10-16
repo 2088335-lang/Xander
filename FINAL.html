@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Xander The Explorer - Smart Transit System</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F5EFE1;
+            color: #41452D;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 210px;
+            height: 100vh;
+            background-color: #4D592D;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px 15px;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 13px 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background-color: #687541;
+        }
+
+        /* MAIN CONTENT */
+
+        .main-content {
+            margin-left: 210px;
+            padding: 30px;
+            min-height: 100vh;
+        }
+
+        /* PAGE SECTIONS */
+
+        .page {
+            display: none;
+            animation: fadeIn 0.25s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1, h2, h3 {
+            color: #41452D;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .welcome p {
+            color: #6D705B;
+            line-height: 1.6;
+        }
+
+        /* HOME CARDS */
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 250px));
+            gap: 25px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 100%;
+            min-height: 230px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+            text-align: center;
+            padding: 25px;
+            color: #41452D;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.2s;
+            cursor: pointer;
+            border: none;
+            font: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            margin: 5px 0 10px;
+            font-size: 20px;
+        }
+
+        .card p {
+            margin: 0;
+            color: #777966;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* GENERAL CARDS AND BUTTONS */
+
+        .content-card {
+            background-color: white;
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+        }
+
+        .back-button,
+        .primary-button {
+            display: inline-block;
+            background-color: #4D592D;
+            color: white;
+            border: none;
+            padding: 11px 16px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .back-button:hover,
+        .primary-button:hover {
+            background-color: #687541;
+        }
+
+        /* FORMS */
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 15px 0 7px;
+            font-size: 14px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #D9D0B9;
+            border-radius: 8px;
+            background-color: #F8F5ED;
+            font-size: 14px;
+            color: #41452D;
+        }
+
+        .form-button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px;
+            background-color: #4D592D;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-button:hover {
+            background-color: #687541;
+        }
+
+        .form-result {
+            margin-top: 20px;
+            padding: 18px;
+            background-color: #F1E8D2;
+            border: 1px solid #E3D3B0;
+            border-radius: 10px;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .notice {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #77715F;
+            margin-top: 20px;
+        }
+
+        /* SCHEDULE TABLE */
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 700px;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #4D592D;
+            color: white;
+            text-align: left;
+            padding: 14px;
+        }
+
+        td {
+            padding: 13px 14px;
+            border-bottom: 1px solid #E4E0D5;
+            line-height: 1.5;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F8F5ED;
+        }
+
+        tr:hover {
+            background-color: #EEE8D8;
+        }
+
+        .note {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #E9E2CF;
+            border-left: 5px solid #4D592D;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        /* MAP */
+
+        #map {
+            width: 100%;
+            height: 65vh;
+            min-height: 350px;
+            border: 2px solid #4D592D;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        #map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ABOUT US */
+
+        .about-card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 18px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-card h3 {
+            color: #687541;
+            margin-top: 0;
+        }
+
+        .about-card p {
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 18px;
+            color: #777966;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* MOBILE RESPONSIVE */
+
+        @media (max-width: 750px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 12px;
+                overflow: visible;
+            }
+
+            .logo {
+                margin-bottom: 12px;
+            }
+
+            .sidebar nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .sidebar a {
+                display: inline-block;
+                margin: 0;
+                padding: 10px;
+                font-size: 13px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .welcome h1 {
+                font-size: 25px;
+            }
+
+            .card-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 15px;
+            }
+
+            .card {
+                min-height: 210px;
+                padding: 15px;
+            }
+
+            .content-card {
+                padding: 18px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                max-width: 300px;
+                margin: auto;
+                min-height: 190px;
+            }
+
+            .main-content {
+                padding: 15px;
+            }
+        }
+
+
+        /* LOGIN SCREEN */
+        .login-screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: linear-gradient(135deg, #F5EFE1, #e4e8d5);
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 410px;
+            background: #ffffff;
+            color: #41452D;
+            padding: 34px;
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .login-card .login-logo {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .login-card h1 {
+            text-align: center;
+            margin: 0 0 8px;
+            font-size: 25px;
+        }
+
+        .login-card .login-subtitle {
+            text-align: center;
+            color: #777966;
+            margin: 0 0 25px;
+            line-height: 1.5;
+        }
+
+        .login-card label {
+            display: block;
+            font-weight: bold;
+            margin: 14px 0 7px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #c9cdb9;
+            border-radius: 8px;
+            font: inherit;
+            background: #fff;
+            color: #292d20;
+        }
+
+        .login-card input:focus {
+            outline: 2px solid #687541;
+            border-color: #687541;
+        }
+
+        .login-button {
+            width: 100%;
+            margin-top: 22px;
+            border: none;
+            border-radius: 8px;
+            padding: 13px;
+            background: #4D592D;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-button:hover { background: #687541; }
+
+        .login-error {
+            min-height: 20px;
+            color: #b42318;
+            font-size: 14px;
+            margin: 12px 0 0;
+        }
+
+        .demo-credentials {
+            margin-top: 18px;
+            padding: 11px;
+            background: #f5f6ef;
+            border-radius: 8px;
+            color: #555b43;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .app-shell { min-height: 100vh; }
+
+        .theme-toggle {
+            display: block;
+            width: 100%;
+            margin-top: 22px;
+            padding: 11px 12px;
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 8px;
+            background: #687541;
+            color: white;
+            font: inherit;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover { background: #7b8950; }
+
+        /* DARK THEME */
+        body.dark-theme {
+            background: #171a16;
+            color: #e8eadf;
+        }
+
+        body.dark-theme .main-content { background: #171a16; }
+        body.dark-theme h1,
+        body.dark-theme h2,
+        body.dark-theme h3 { color: #e8eadf; }
+        body.dark-theme .welcome p,
+        body.dark-theme footer { color: #b8bea8; }
+        body.dark-theme .card,
+        body.dark-theme .content-card,
+        body.dark-theme .about-card,
+        body.dark-theme .form-card,
+        body.dark-theme .schedule-card,
+        body.dark-theme .table-container {
+            background: #252a22;
+            color: #e8eadf;
+            border-color: #414a37;
+        }
+        body.dark-theme .card p,
+        body.dark-theme .content-card p,
+        body.dark-theme .about-card p,
+        body.dark-theme .notice,
+        body.dark-theme .note { color: #c6cbb9; }
+        body.dark-theme input,
+        body.dark-theme select,
+        body.dark-theme textarea {
+            background: #1d211b;
+            color: #f0f1e9;
+            border-color: #59634a;
+        }
+        body.dark-theme table { color: #e8eadf; }
+        body.dark-theme th { background: #3b452d; color: #fff; }
+        body.dark-theme td { border-color: #414a37; }
+        body.dark-theme tr:nth-child(even) { background: #20251e; }
+        body.dark-theme .form-result { background: #20251e; color: #e8eadf; }
+        body.dark-theme .login-screen { background: linear-gradient(135deg, #171a16, #2a3223); }
+        body.dark-theme .login-card { background: #252a22; color: #e8eadf; }
+        body.dark-theme .login-card h1 { color: #e8eadf; }
+        body.dark-theme .login-card .login-subtitle { color: #c6cbb9; }
+        body.dark-theme .login-card input { background: #1d211b; color: #fff; border-color: #59634a; }
+        body.dark-theme .demo-credentials { background: #1d211b; color: #d5dac8; }
+        body.dark-theme .login-button { background: #687541; }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="login-logo">🚌</div>
+            <h1>Xander The Explorer</h1>
+            <p class="login-subtitle">Smart Transit System<br>Admin Login</p>
+            <form id="loginForm">
+                <label for="adminUsername">Username</label>
+                <input id="adminUsername" name="username" type="text" autocomplete="username" placeholder="Enter admin username" required>
+
+                <label for="adminPassword">Password</label>
+                <input id="adminPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter password" required>
+
+                <button class="login-button" type="submit">Log In</button>
+                <p class="login-error" id="loginError" aria-live="polite"></p>
+            </form>
+            <div class="demo-credentials">
+                <strong>Demo login</strong><br>
+                Username: <strong>admin</strong><br>
+                Password: <strong>admin123</strong>
+            </div>
+        </div>
+    </section>
+
+    <div class="app-shell" id="appShell" style="display: none;">
+
+    <!-- SIDEBAR NAVIGATION -->
+
+    <aside class="sidebar">
+        <div class="logo">
+            🚌<br>
+            Xander The Explorer
+        </div>
+
+        <nav>
+            <a href="#home" class="nav-link active"
+               data-page="home">🏠 Home</a>
+
+            <a href="#map-page" class="nav-link"
+               data-page="map-page">🗺️ Map</a>
+
+            <a href="#schedule" class="nav-link"
+               data-page="schedule">🕒 Schedules</a>
+
+            <a href="#about" class="nav-link"
+               data-page="about">👤 Profile</a>
+        </nav>
+
+        <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">
+            🌙 Switch to Dark Mode
+        </button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- ================= HOME PAGE ================= -->
+
+        <section id="home" class="page active">
+
+            <div class="welcome">
+                <h1>Welcome, Explorer!</h1>
+                <p>
+                    Your smart guide to public transportation
+                    in Cagayan de Oro City.
+                </p>
+            </div>
+
+            <div class="card-container">
+
+                <button class="card" data-go="find-route">
+                    <div class="card-icon">📍</div>
+                    <h3>Find Route</h3>
+                    <p>
+                        Find public transportation routes
+                        to your destination.
+                    </p>
+                </button>
+
+                <button class="card" data-go="estimated-fare">
+                    <div class="card-icon">💰</div>
+                    <h3>Estimated Fare</h3>
+                    <p>
+                        Calculate an estimated jeepney fare
+                        for your trip.
+                    </p>
+                </button>
+
+                <button class="card" data-go="about">
+                    <div class="card-icon">ℹ️</div>
+                    <h3>About Us</h3>
+                    <p>
+                        Learn more about Xander The Explorer
+                        and our project.
+                    </p>
+                </button>
+
+                <button class="card" data-go="schedule">
+                    <div class="card-icon">🕒</div>
+                    <h3>Schedules</h3>
+                    <p>
+                        View public transportation operating
+                        hours and schedules.
+                    </p>
+                </button>
+
+            </div>
+
+            <footer>
+                Xander The Explorer | Smart Transit System<br>
+                Cagayan de Oro City
+            </footer>
+
+        </section>
+
+        <!-- ================= FIND ROUTE PAGE ================= -->
+
+        <section id="find-route" class="page">
+
+            <button class="back-button" data-go="home">
+                ← Back to Home
+            </button>
+
+            <h1>📍 Find Your Route</h1>
+
+            <p>
+                Choose your starting point, destination,
+                and passenger type.
+            </p>
+
+            <div class="content-card">
+
+                <form id="routeForm">
+
+                    <label for="startingPoint">
+                        Starting Point:
+                    </label>
+
+                    <select id="startingPoint" required>
+                        <option value="">Choose starting point</option>
+                        <option>Agora Market City and Terminal</option>
+                        <option>Baikingon</option>
+                        <option>Balulang</option>
+                        <option>Bayabas</option>
+                        <option>Bonbon</option>
+                        <option>Carmen Public Market</option>
+                        <option>Cogon Public Market</option>
+                        <option>Villa Verde</option>
+                        <option>Xavier Heights</option>
+                    </select>
+
+                    <label for="destination">
+                        Destination:
+                    </label>
+
+                    <select id="destination" required>
+                        <option value="">Choose destination</option>
+                        <option>Agora Market City and Terminal</option>
+                        <option>Baikingon</option>
+                        <option>Balulang</option>
+                        <option>Bayabas</option>
+                        <option>Bonbon</option>
+                        <option>Carmen Public Market</option>
+                        <option>Cogon Public Market</option>
+                        <option>Villa Verde</option>
+                        <option>Xavier Heights</option>
+                    </select>
+
+                    <label for="passengerType">
+                        Passenger Type:
+                    </label>
+
+                    <select id="passengerType" required>
+                        <option value="regular">
+                            Regular Passenger
+                        </option>
+                        <option value="discount">
+                            Student
+                        </option>
+                        <option value="discount">
+                            Senior Citizen
+                        </option>
+                        <option value="discount">
+                            Person with Disability (PWD)
+                        </option>
+                    </select>
+
+                    <button type="submit" class="form-button">
+                        Find Route
+                    </button>
+
+                </form>
+
+                <div id="routeResult" class="form-result"
+                     aria-live="polite">
+                    Your route information will appear here.
+                </div>
+
+                <p class="notice">
+                    Note: This version records the selected locations
+                    but does not yet have a complete verified route
+                    database. It will not invent a route or distance.
+                </p>
+
+                <p>
+                    <a href="https://cagayandeoro.gov.ph/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Cagayan de Oro City Official Website
+                    </a>
+                </p>
+
+            </div>
+        </section>
+
+        <!-- ================= ESTIMATED FARE PAGE ================= -->
+
+        <section id="estimated-fare" class="page">
+
+            <button class="back-button" data-go="home">
+                ← Back to Home
+            </button>
+
+            <h1>💰 Estimated Jeepney Fares</h1>
+
+            <p>
+                Enter your estimated travel distance to calculate
+                a reference fare.
+            </p>
+
+            <div class="content-card">
+
+                <h2>Traditional Jeepney</h2>
+                <p>Minimum fare: ₱14 for the first 4 km.</p>
+                <p>Additional distance: ₱2 per kilometer after 4 km.</p>
+
+                <hr>
+
+                <h2>Modern Jeepney</h2>
+                <p>Minimum fare: ₱17 for the first 4 km.</p>
+                <p>Additional distance: ₱2.40 per kilometer after 4 km.</p>
+
+                <hr>
+
+                <form id="fareForm">
+
+                    <label for="distance">
+                        Estimated Distance (kilometers):
+                    </label>
+
+                    <input type="number" id="distance"
+                           min="0.1" step="0.1"
+                           placeholder="Enter distance, e.g. 6"
+                           required>
+
+                    <label for="vehicleType">
+                        Jeepney Type:
+                    </label>
+
+                    <select id="vehicleType">
+                        <option value="traditional">
+                            Traditional Jeepney
+                        </option>
+                        <option value="modern">
+                            Modern Jeepney
+                        </option>
+                    </select>
+
+                    <label for="farePassenger">
+                        Passenger Type:
+                    </label>
+
+                    <select id="farePassenger">
+                        <option value="regular">
+                            Regular Passenger
+                        </option>
+                        <option value="discount">
+                            Student
+                        </option>
+                        <option value="discount">
+                            Senior Citizen
+                        </option>
+                        <option value="discount">
+                            Person with Disability (PWD)
+                        </option>
+                    </select>
+
+                    <button type="submit" class="form-button">
+                        Calculate Estimated Fare
+                    </button>
+
+                </form>
+
+                <div id="fareResult" class="form-result"
+                     aria-live="polite">
+                    Your estimated fare will appear here.
+                </div>
+
+                <p class="notice">
+                    These calculations use the reference rates listed
+                    on this page. They are estimates, not a guarantee
+                    of the official fare. Actual fare rules and
+                    eligible discounts should be verified before travel.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- ================= SCHEDULE PAGE ================= -->
+
+        <section id="schedule" class="page">
+
+            <button class="back-button" data-go="home">
+                ← Back to Home
+            </button>
+
+            <h1>🕒 CDO Public Transportation Schedule</h1>
+
+            <p>
+                Check the estimated operating hours of public
+                transportation routes in Cagayan de Oro City.
+            </p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transport / Route</th>
+                            <th>Operating Hours</th>
+                            <th>Operating Days</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>OROTSCO (Bugo–Igpit)</td>
+                            <td>4:00 AM – 11:00 PM</td>
+                            <td>Daily</td>
+                            <td>
+                                Connects eastern and western areas
+                                of CDO through the main highway.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Carmen Routes</td>
+                            <td>5:00 AM – 11:00 PM*</td>
+                            <td>Daily*</td>
+                            <td>Standard intra-city transportation.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Cogon Routes</td>
+                            <td>5:00 AM – 11:00 PM*</td>
+                            <td>Daily*</td>
+                            <td>
+                                Serves commuters traveling to and
+                                from the Cogon area.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Balulang Routes</td>
+                            <td>5:00 AM – 11:00 PM*</td>
+                            <td>Daily*</td>
+                            <td>
+                                Serves Balulang and nearby destinations.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Uptown Routes</td>
+                            <td>5:00 AM – 11:00 PM*</td>
+                            <td>Daily*</td>
+                            <td>
+                                Connects Uptown with other parts
+                                of the city.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Lapasan Routes</td>
+                            <td>5:00 AM – 11:00 PM*</td>
+                            <td>Daily*</td>
+                            <td>
+                                Serves commuters traveling to and
+                                from Lapasan.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>LPTC (Lumbia)</td>
+                            <td>Around 5:00 AM – 10:00/11:00 PM*</td>
+                            <td>Daily*</td>
+                            <td>
+                                Typical hours; confirm the specific
+                                route schedule.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                United Transport Cooperative
+                                (Buena Oro, Barra, Iponan)
+                            </td>
+                            <td>Around 5:00 AM – 10:00/11:00 PM*</td>
+                            <td>Daily*</td>
+                            <td>
+                                Hours may differ depending on the route.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Balulang Transport Service Cooperative</td>
+                            <td>Around 5:00 AM – 10:00/11:00 PM*</td>
+                            <td>Daily*</td>
+                            <td>
+                                Typical hours; confirm with the cooperative.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-card">
+                <h2>Peak Hours</h2>
+                <p><strong>Morning:</strong> 7:00 AM – 9:00 AM</p>
+                <p><strong>Afternoon:</strong> 4:30 PM – 6:30 PM</p>
+                <p>
+                    These are common rush-hour periods when more
+                    commuters may be traveling to school, work, and home.
+                </p>
+            </div>
+
+            <div class="note">
+                <strong>Reminder:</strong> Operating hours are estimates
+                and may vary by route and transport operator. Schedules
+                may change because of traffic, weather, holidays, or
+                operator announcements. Please confirm the latest
+                schedule with the respective cooperative. An asterisk (*)
+                indicates estimated general hours.
+            </div>
+
+        </section>
+
+        <!-- ================= MAP PAGE ================= -->
+
+        <section id="map-page" class="page">
+
+            <button class="back-button" data-go="home">
+                ← Back to Home
+            </button>
+
+            <h1>🗺️ Cagayan de Oro City Map</h1>
+
+            <p>
+                Explore places and view the map around Cagayan de Oro City.
+            </p>
+
+            <div class="content-card">
+                <div id="map">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Cagayan%20de%20Oro%20City%2C%20Philippines&z=13&output=embed"
+                        title="Google Map of Cagayan de Oro City"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <p class="notice">
+                    An internet connection is needed to load the map.
+                    This map shows Cagayan de Oro City generally and
+                    does not yet display your selected jeepney route.
+                </p>
+
+                <a class="primary-button"
+                   href="https://www.google.com/maps/search/?api=1&query=Cagayan+de+Oro+City"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Open Google Maps
+                </a>
+            </div>
+
+        </section>
+
+        <!-- ================= ABOUT US PAGE ================= -->
+
+        <section id="about" class="page">
+
+            <button class="back-button" data-go="home">
+                ← Back to Home
+            </button>
+
+            <h1>About Us</h1>
+
+            <div class="about-card">
+                <h3>Who We Are</h3>
+                <p>
+                    Welcome to Xander The Explorer - Smart Transit System!
+                    We are students who created this website to help
+                    commuters in Cagayan de Oro City find public
+                    transportation routes more easily.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>What We Do</h3>
+                <p>
+                    Our website aims to provide useful information about
+                    public transportation routes, starting points,
+                    destinations, estimated fares, distances, and roads
+                    passed. It helps commuters become more familiar with
+                    routes and plan their trips more conveniently.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>Our Mission</h3>
+                <p>
+                    To provide accessible and easy-to-understand public
+                    transportation information for commuters in
+                    Cagayan de Oro City.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>Our Vision</h3>
+                <p>
+                    To become a helpful guide for commuters by making
+                    public transportation information easier to find
+                    and understand. We want to help people travel around
+                    Cagayan de Oro City with greater convenience
+                    and confidence.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h3>Our Purpose</h3>
+                <p>
+                    Our purpose is to help students, workers, residents,
+                    and visitors find suitable public transportation
+                    routes. Through this website, we aim to make
+                    commuting simpler and help users plan their journeys.
+                </p>
+            </div>
+
+            <footer>
+                &copy; 2026 Xander The Explorer - Smart Transit System
+            </footer>
+
+        </section>
+
+    </main>
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // DEMO ADMIN LOGIN: frontend-only, not secure authentication
+        var loginForm = document.getElementById("loginForm");
+        var loginScreen = document.getElementById("loginScreen");
+        var appShell = document.getElementById("appShell");
+        var loginError = document.getElementById("loginError");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById("adminUsername").value.trim();
+            var password = document.getElementById("adminPassword").value;
+
+            if (username === "admin" && password === "admin123") {
+                loginScreen.style.display = "none";
+                appShell.style.display = "block";
+                loginError.textContent = "";
+            } else {
+                loginError.textContent = "Incorrect username or password. Please try again.";
+            }
+        });
+
+        // LIGHT AND DARK THEME SWITCH
+        var themeToggle = document.getElementById("themeToggle");
+
+        function setTheme(isDark) {
+            document.body.classList.toggle("dark-theme", isDark);
+            themeToggle.textContent = isDark
+                ? "☀️ Switch to Light Mode"
+                : "🌙 Switch to Dark Mode";
+            themeToggle.setAttribute("aria-pressed", String(isDark));
+            try {
+                localStorage.setItem("xanderTheme", isDark ? "dark" : "light");
+            } catch (error) {
+                // Theme still works for this page if storage is unavailable.
+            }
+        }
+
+        var savedTheme = "light";
+        try {
+            savedTheme = localStorage.getItem("xanderTheme") || "light";
+        } catch (error) {
+            savedTheme = "light";
+        }
+        setTheme(savedTheme === "dark");
+
+        themeToggle.addEventListener("click", function() {
+            setTheme(!document.body.classList.contains("dark-theme"));
+        });
+
+        // SWITCH BETWEEN PAGES
+
+        function showPage(pageId) {
+            var pages = document.querySelectorAll(".page");
+            var links = document.querySelectorAll(".nav-link");
+
+            var selectedPage = document.getElementById(pageId);
+
+            if (!selectedPage) {
+                pageId = "home";
+            }
+
+            pages.forEach(function(page) {
+                page.classList.remove("active");
+            });
+
+            document.getElementById(pageId).classList.add("active");
+
+            links.forEach(function(link) {
+                link.classList.remove("active");
+
+                if (link.getAttribute("data-page") === pageId) {
+                    link.classList.add("active");
+                }
+            });
+
+            window.scrollTo(0, 0);
+        }
+
+        // SIDEBAR NAVIGATION
+
+        document.querySelectorAll(".nav-link").forEach(function(link) {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+
+                var pageId = this.getAttribute("data-page");
+
+                showPage(pageId);
+
+                history.replaceState(null, "", "#" + pageId);
+            });
+        });
+
+        // DASHBOARD CARDS AND BACK BUTTONS
+
+        document.querySelectorAll("[data-go]").forEach(function(button) {
+            button.addEventListener("click", function() {
+                var pageId = this.getAttribute("data-go");
+
+                showPage(pageId);
+
+                history.replaceState(null, "", "#" + pageId);
+            });
+        });
+
+        // OPEN A PAGE FROM ITS URL HASH
+
+        var startingPage = window.location.hash.substring(1);
+
+        if (startingPage && document.getElementById(startingPage)) {
+            showPage(startingPage);
+        }
+
+        // FIND ROUTE FORM
+
+        document.getElementById("routeForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                var start =
+                    document.getElementById("startingPoint").value;
+
+                var destination =
+                    document.getElementById("destination").value;
+
+                var passengerSelect =
+                    document.getElementById("passengerType");
+
+                var passenger =
+                    passengerSelect.options[
+                        passengerSelect.selectedIndex
+                    ].text;
+
+                var result =
+                    document.getElementById("routeResult");
+
+                if (start === destination) {
+                    result.textContent =
+                        "Please choose different starting and destination points.";
+                    return;
+                }
+
+                result.innerHTML = "";
+
+                var heading = document.createElement("h3");
+                heading.textContent = "Route Information";
+                result.appendChild(heading);
+
+                var startInfo = document.createElement("p");
+                startInfo.textContent = "Starting point: " + start;
+                result.appendChild(startInfo);
+
+                var destinationInfo = document.createElement("p");
+                destinationInfo.textContent =
+                    "Destination: " + destination;
+                result.appendChild(destinationInfo);
+
+                var passengerInfo = document.createElement("p");
+                passengerInfo.textContent =
+                    "Passenger type: " + passenger;
+                result.appendChild(passengerInfo);
+
+                var message = document.createElement("p");
+                message.textContent =
+                    "Your selections have been recorded. A verified route, " +
+                    "distance, and fare cannot be displayed until the official " +
+                    "route information is added to the system.";
+                result.appendChild(message);
+            }
+        );
+
+        // ESTIMATED FARE CALCULATOR
+
+        document.getElementById("fareForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                var distance =
+                    parseFloat(document.getElementById("distance").value);
+
+                var vehicle =
+                    document.getElementById("vehicleType").value;
+
+                var passenger =
+                    document.getElementById("farePassenger").value;
+
+                var result =
+                    document.getElementById("fareResult");
+
+                if (isNaN(distance) || distance <= 0) {
+                    result.textContent =
+                        "Please enter a distance greater than zero.";
+                    return;
+                }
+
+                var baseFare;
+                var extraRate;
+
+                if (vehicle === "traditional") {
+                    baseFare = 14;
+                    extraRate = 2;
+                } else {
+                    baseFare = 17;
+                    extraRate = 2.40;
+                }
+
+                var fare = baseFare;
+
+                if (distance > 4) {
+                    fare = baseFare + ((distance - 4) * extraRate);
+                }
+
+                var regularFare = fare;
+
+                if (passenger === "discount") {
+                    fare = fare * 0.80;
+                }
+
+                fare = Math.ceil(fare * 100) / 100;
+
+                result.innerHTML = "";
+
+                var heading = document.createElement("h3");
+                heading.textContent = "Estimated Fare Result";
+                result.appendChild(heading);
+
+                var distanceInfo = document.createElement("p");
+                distanceInfo.textContent =
+                    "Distance: " + distance.toFixed(1) + " km";
+                result.appendChild(distanceInfo);
+
+                var vehicleInfo = document.createElement("p");
+                vehicleInfo.textContent =
+                    "Jeepney type: " +
+                    (vehicle === "traditional"
+                        ? "Traditional Jeepney"
+                        : "Modern Jeepney");
+                result.appendChild(vehicleInfo);
+
+                var fareInfo = document.createElement("p");
+                fareInfo.textContent =
+                    "Fare before discount: ₱" +
+                    regularFare.toFixed(2);
+                result.appendChild(fareInfo);
+
+                if (passenger === "discount") {
+                    var discountInfo = document.createElement("p");
+                    discountInfo.textContent =
+                        "Reference discount: 20%";
+                    result.appendChild(discountInfo);
+                }
+
+                var total = document.createElement("h3");
+                total.textContent =
+                    "Estimated Total: ₱" + fare.toFixed(2);
+                result.appendChild(total);
+
+                var note = document.createElement("p");
+                note.textContent =
+                    "This is a reference calculation. Actual fares, " +
+                    "rounding rules, and discount eligibility may differ.";
+                result.appendChild(note);
+            }
+        );
+    </script>
+
+</body>
+</html>
