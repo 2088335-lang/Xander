@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Xander The Explorer - Smart Transit System</title>
 
     <style>
@@ -19,7 +18,6 @@
         }
 
         /* SIDEBAR */
-
         .sidebar {
             width: 210px;
             height: 100vh;
@@ -57,7 +55,6 @@
         }
 
         /* MAIN CONTENT */
-
         .main-content {
             margin-left: 210px;
             padding: 30px;
@@ -65,7 +62,6 @@
         }
 
         /* PAGE SECTIONS */
-
         .page {
             display: none;
             animation: fadeIn 0.25s ease;
@@ -80,7 +76,6 @@
                 opacity: 0;
                 transform: translateY(5px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -107,7 +102,6 @@
         }
 
         /* HOME CARDS */
-
         .card-container {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 250px));
@@ -158,7 +152,6 @@
         }
 
         /* GENERAL CARDS AND BUTTONS */
-
         .content-card {
             background-color: white;
             padding: 25px;
@@ -187,7 +180,6 @@
         }
 
         /* FORMS */
-
         label {
             display: block;
             font-weight: bold;
@@ -241,7 +233,6 @@
         }
 
         /* SCHEDULE TABLE */
-
         .table-container {
             width: 100%;
             overflow-x: auto;
@@ -288,7 +279,6 @@
         }
 
         /* MAP */
-
         #map {
             width: 100%;
             height: 65vh;
@@ -306,7 +296,6 @@
         }
 
         /* ABOUT US */
-
         .about-card {
             background-color: white;
             padding: 25px;
@@ -326,7 +315,6 @@
         }
 
         /* FOOTER */
-
         footer {
             text-align: center;
             margin-top: 40px;
@@ -337,7 +325,6 @@
         }
 
         /* MOBILE RESPONSIVE */
-
         @media (max-width: 750px) {
             .sidebar {
                 width: 100%;
@@ -404,7 +391,6 @@
                 padding: 15px;
             }
         }
-
 
         /* LOGIN SCREEN */
         .login-screen {
@@ -479,7 +465,9 @@
             cursor: pointer;
         }
 
-        .login-button:hover { background: #687541; }
+        .login-button:hover {
+            background: #687541;
+        }
 
         .login-error {
             min-height: 20px;
@@ -498,7 +486,9 @@
             line-height: 1.6;
         }
 
-        .app-shell { min-height: 100vh; }
+        .app-shell {
+            min-height: 100vh;
+        }
 
         .theme-toggle {
             display: block;
@@ -514,7 +504,9 @@
             cursor: pointer;
         }
 
-        .theme-toggle:hover { background: #7b8950; }
+        .theme-toggle:hover {
+            background: #7b8950;
+        }
 
         /* DARK THEME */
         body.dark-theme {
@@ -522,12 +514,21 @@
             color: #e8eadf;
         }
 
-        body.dark-theme .main-content { background: #171a16; }
+        body.dark-theme .main-content {
+            background: #171a16;
+        }
+
         body.dark-theme h1,
         body.dark-theme h2,
-        body.dark-theme h3 { color: #e8eadf; }
+        body.dark-theme h3 {
+            color: #e8eadf;
+        }
+
         body.dark-theme .welcome p,
-        body.dark-theme footer { color: #b8bea8; }
+        body.dark-theme footer {
+            color: #b8bea8;
+        }
+
         body.dark-theme .card,
         body.dark-theme .content-card,
         body.dark-theme .about-card,
@@ -538,11 +539,15 @@
             color: #e8eadf;
             border-color: #414a37;
         }
+
         body.dark-theme .card p,
         body.dark-theme .content-card p,
         body.dark-theme .about-card p,
         body.dark-theme .notice,
-        body.dark-theme .note { color: #c6cbb9; }
+        body.dark-theme .note {
+            color: #c6cbb9;
+        }
+
         body.dark-theme input,
         body.dark-theme select,
         body.dark-theme textarea {
@@ -550,19 +555,60 @@
             color: #f0f1e9;
             border-color: #59634a;
         }
-        body.dark-theme table { color: #e8eadf; }
-        body.dark-theme th { background: #3b452d; color: #fff; }
-        body.dark-theme td { border-color: #414a37; }
-        body.dark-theme tr:nth-child(even) { background: #20251e; }
-        body.dark-theme .form-result { background: #20251e; color: #e8eadf; }
-        body.dark-theme .login-screen { background: linear-gradient(135deg, #171a16, #2a3223); }
-        body.dark-theme .login-card { background: #252a22; color: #e8eadf; }
-        body.dark-theme .login-card h1 { color: #e8eadf; }
-        body.dark-theme .login-card .login-subtitle { color: #c6cbb9; }
-        body.dark-theme .login-card input { background: #1d211b; color: #fff; border-color: #59634a; }
-        body.dark-theme .demo-credentials { background: #1d211b; color: #d5dac8; }
-        body.dark-theme .login-button { background: #687541; }
 
+        body.dark-theme table {
+            color: #e8eadf;
+        }
+
+        body.dark-theme th {
+            background: #3b452d;
+            color: #fff;
+        }
+
+        body.dark-theme td {
+            border-color: #414a37;
+        }
+
+        body.dark-theme tr:nth-child(even) {
+            background: #20251e;
+        }
+
+        body.dark-theme .form-result {
+            background: #20251e;
+            color: #e8eadf;
+        }
+
+        body.dark-theme .login-screen {
+            background: linear-gradient(135deg, #171a16, #2a3223);
+        }
+
+        body.dark-theme .login-card {
+            background: #252a22;
+            color: #e8eadf;
+        }
+
+        body.dark-theme .login-card h1 {
+            color: #e8eadf;
+        }
+
+        body.dark-theme .login-card .login-subtitle {
+            color: #c6cbb9;
+        }
+
+        body.dark-theme .login-card input {
+            background: #1d211b;
+            color: #fff;
+            border-color: #59634a;
+        }
+
+        body.dark-theme .demo-credentials {
+            background: #1d211b;
+            color: #d5dac8;
+        }
+
+        body.dark-theme .login-button {
+            background: #687541;
+        }
     </style>
 </head>
 
@@ -573,16 +619,22 @@
             <div class="login-logo">🚌</div>
             <h1>Xander The Explorer</h1>
             <p class="login-subtitle">Smart Transit System<br>Admin Login</p>
+
             <form id="loginForm">
                 <label for="adminUsername">Username</label>
-                <input id="adminUsername" name="username" type="text" autocomplete="username" placeholder="Enter admin username" required>
+                <input id="adminUsername" name="username" type="text"
+                       autocomplete="username"
+                       placeholder="Enter admin username" required>
 
                 <label for="adminPassword">Password</label>
-                <input id="adminPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter password" required>
+                <input id="adminPassword" name="password" type="password"
+                       autocomplete="current-password"
+                       placeholder="Enter password" required>
 
                 <button class="login-button" type="submit">Log In</button>
                 <p class="login-error" id="loginError" aria-live="polite"></p>
             </form>
+
             <div class="demo-credentials">
                 <strong>Demo login</strong><br>
                 Username: <strong>admin</strong><br>
@@ -593,543 +645,359 @@
 
     <div class="app-shell" id="appShell" style="display: none;">
 
-    <!-- SIDEBAR NAVIGATION -->
-
-    <aside class="sidebar">
-        <div class="logo">
-            🚌<br>
-            Xander The Explorer
-        </div>
-
-        <nav>
-            <a href="#home" class="nav-link active"
-               data-page="home">🏠 Home</a>
-
-            <a href="#map-page" class="nav-link"
-               data-page="map-page">🗺️ Map</a>
-
-            <a href="#schedule" class="nav-link"
-               data-page="schedule">🕒 Schedules</a>
-
-            <a href="#about" class="nav-link"
-               data-page="about">👤 Profile</a>
-        </nav>
-
-        <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">
-            🌙 Switch to Dark Mode
-        </button>
-    </aside>
-
-    <!-- MAIN CONTENT -->
-
-    <main class="main-content">
-
-        <!-- ================= HOME PAGE ================= -->
-
-        <section id="home" class="page active">
-
-            <div class="welcome">
-                <h1>Welcome, Explorer!</h1>
-                <p>
-                    Your smart guide to public transportation
-                    in Cagayan de Oro City.
-                </p>
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="sidebar">
+            <div class="logo">
+                🚌<br>
+                Xander The Explorer
             </div>
 
-            <div class="card-container">
+            <nav>
+                <a href="#home" class="nav-link active" data-page="home">🏠 Home</a>
+                <a href="#map-page" class="nav-link" data-page="map-page">🗺️ Map</a>
+                <a href="#schedule" class="nav-link" data-page="schedule">🕒 Schedules</a>
+                <a href="#about" class="nav-link" data-page="about">👤 Profile</a>
+            </nav>
 
-                <button class="card" data-go="find-route">
-                    <div class="card-icon">📍</div>
-                    <h3>Find Route</h3>
-                    <p>
-                        Find public transportation routes
-                        to your destination.
-                    </p>
-                </button>
-
-                <button class="card" data-go="estimated-fare">
-                    <div class="card-icon">💰</div>
-                    <h3>Estimated Fare</h3>
-                    <p>
-                        Calculate an estimated jeepney fare
-                        for your trip.
-                    </p>
-                </button>
-
-                <button class="card" data-go="about">
-                    <div class="card-icon">ℹ️</div>
-                    <h3>About Us</h3>
-                    <p>
-                        Learn more about Xander The Explorer
-                        and our project.
-                    </p>
-                </button>
-
-                <button class="card" data-go="schedule">
-                    <div class="card-icon">🕒</div>
-                    <h3>Schedules</h3>
-                    <p>
-                        View public transportation operating
-                        hours and schedules.
-                    </p>
-                </button>
-
-            </div>
-
-            <footer>
-                Xander The Explorer | Smart Transit System<br>
-                Cagayan de Oro City
-            </footer>
-
-        </section>
-
-        <!-- ================= FIND ROUTE PAGE ================= -->
-
-        <section id="find-route" class="page">
-
-            <button class="back-button" data-go="home">
-                ← Back to Home
+            <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">
+                🌙 Switch to Dark Mode
             </button>
+        </aside>
 
-            <h1>📍 Find Your Route</h1>
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
 
-            <p>
-                Choose your starting point, destination,
-                and passenger type.
-            </p>
+            <!-- HOME PAGE -->
+            <section id="home" class="page active">
+                <div class="welcome">
+                    <h1>Welcome, Explorer!</h1>
+                    <p>Your smart guide to public transportation in Cagayan de Oro City.</p>
+                </div>
 
-            <div class="content-card">
-
-                <form id="routeForm">
-
-                    <label for="startingPoint">
-                        Starting Point:
-                    </label>
-
-                    <select id="startingPoint" required>
-                        <option value="">Choose starting point</option>
-                        <option>Agora Market City and Terminal</option>
-                        <option>Baikingon</option>
-                        <option>Balulang</option>
-                        <option>Bayabas</option>
-                        <option>Bonbon</option>
-                        <option>Carmen Public Market</option>
-                        <option>Cogon Public Market</option>
-                        <option>Villa Verde</option>
-                        <option>Xavier Heights</option>
-                    </select>
-
-                    <label for="destination">
-                        Destination:
-                    </label>
-
-                    <select id="destination" required>
-                        <option value="">Choose destination</option>
-                        <option>Agora Market City and Terminal</option>
-                        <option>Baikingon</option>
-                        <option>Balulang</option>
-                        <option>Bayabas</option>
-                        <option>Bonbon</option>
-                        <option>Carmen Public Market</option>
-                        <option>Cogon Public Market</option>
-                        <option>Villa Verde</option>
-                        <option>Xavier Heights</option>
-                    </select>
-
-                    <label for="passengerType">
-                        Passenger Type:
-                    </label>
-
-                    <select id="passengerType" required>
-                        <option value="regular">
-                            Regular Passenger
-                        </option>
-                        <option value="discount">
-                            Student
-                        </option>
-                        <option value="discount">
-                            Senior Citizen
-                        </option>
-                        <option value="discount">
-                            Person with Disability (PWD)
-                        </option>
-                    </select>
-
-                    <button type="submit" class="form-button">
-                        Find Route
+                <div class="card-container">
+                    <button class="card" data-go="find-route">
+                        <div class="card-icon">📍</div>
+                        <h3>Find Route</h3>
+                        <p>Find public transportation routes to your destination.</p>
                     </button>
 
-                </form>
-
-                <div id="routeResult" class="form-result"
-                     aria-live="polite">
-                    Your route information will appear here.
-                </div>
-
-                <p class="notice">
-                    Note: This version records the selected locations
-                    but does not yet have a complete verified route
-                    database. It will not invent a route or distance.
-                </p>
-
-                <p>
-                    <a href="https://cagayandeoro.gov.ph/"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Cagayan de Oro City Official Website
-                    </a>
-                </p>
-
-            </div>
-        </section>
-
-        <!-- ================= ESTIMATED FARE PAGE ================= -->
-
-        <section id="estimated-fare" class="page">
-
-            <button class="back-button" data-go="home">
-                ← Back to Home
-            </button>
-
-            <h1>💰 Estimated Jeepney Fares</h1>
-
-            <p>
-                Enter your estimated travel distance to calculate
-                a reference fare.
-            </p>
-
-            <div class="content-card">
-
-                <h2>Traditional Jeepney</h2>
-                <p>Minimum fare: ₱14 for the first 4 km.</p>
-                <p>Additional distance: ₱2 per kilometer after 4 km.</p>
-
-                <hr>
-
-                <h2>Modern Jeepney</h2>
-                <p>Minimum fare: ₱17 for the first 4 km.</p>
-                <p>Additional distance: ₱2.40 per kilometer after 4 km.</p>
-
-                <hr>
-
-                <form id="fareForm">
-
-                    <label for="distance">
-                        Estimated Distance (kilometers):
-                    </label>
-
-                    <input type="number" id="distance"
-                           min="0.1" step="0.1"
-                           placeholder="Enter distance, e.g. 6"
-                           required>
-
-                    <label for="vehicleType">
-                        Jeepney Type:
-                    </label>
-
-                    <select id="vehicleType">
-                        <option value="traditional">
-                            Traditional Jeepney
-                        </option>
-                        <option value="modern">
-                            Modern Jeepney
-                        </option>
-                    </select>
-
-                    <label for="farePassenger">
-                        Passenger Type:
-                    </label>
-
-                    <select id="farePassenger">
-                        <option value="regular">
-                            Regular Passenger
-                        </option>
-                        <option value="discount">
-                            Student
-                        </option>
-                        <option value="discount">
-                            Senior Citizen
-                        </option>
-                        <option value="discount">
-                            Person with Disability (PWD)
-                        </option>
-                    </select>
-
-                    <button type="submit" class="form-button">
-                        Calculate Estimated Fare
+                    <button class="card" data-go="estimated-fare">
+                        <div class="card-icon">💰</div>
+                        <h3>Estimated Fare</h3>
+                        <p>Calculate an estimated jeepney fare for your trip.</p>
                     </button>
 
-                </form>
+                    <button class="card" data-go="about">
+                        <div class="card-icon">ℹ️</div>
+                        <h3>About Us</h3>
+                        <p>Learn more about Xander The Explorer and our project.</p>
+                    </button>
 
-                <div id="fareResult" class="form-result"
-                     aria-live="polite">
-                    Your estimated fare will appear here.
+                    <button class="card" data-go="schedule">
+                        <div class="card-icon">🕒</div>
+                        <h3>Schedules</h3>
+                        <p>View public transportation operating hours and schedules.</p>
+                    </button>
                 </div>
 
-                <p class="notice">
-                    These calculations use the reference rates listed
-                    on this page. They are estimates, not a guarantee
-                    of the official fare. Actual fare rules and
-                    eligible discounts should be verified before travel.
-                </p>
+                <footer>
+                    Xander The Explorer | Smart Transit System<br>
+                    Cagayan de Oro City
+                </footer>
+            </section>
 
-            </div>
-        </section>
+            <!-- FIND ROUTE PAGE -->
+            <section id="find-route" class="page">
+                <button class="back-button" data-go="home">← Back to Home</button>
+                <h1>📍 Find Your Route</h1>
+                <p>Choose your starting point, destination, and passenger type.</p>
 
-        <!-- ================= SCHEDULE PAGE ================= -->
+                <div class="content-card">
+                    <form id="routeForm">
+                        <label for="startingPoint">Starting Point:</label>
+                        <select id="startingPoint" required>
+                            <option value="">Choose starting point</option>
+                            <option>Agora Market City and Terminal</option>
+                            <option>Baikingon</option>
+                            <option>Balulang</option>
+                            <option>Bayabas</option>
+                            <option>Bonbon</option>
+                            <option>Carmen Public Market</option>
+                            <option>Cogon Public Market</option>
+                            <option>Villa Verde</option>
+                            <option>Xavier Heights</option>
+                        </select>
 
-        <section id="schedule" class="page">
+                        <label for="destination">Destination:</label>
+                        <select id="destination" required>
+                            <option value="">Choose destination</option>
+                            <option>Agora Market City and Terminal</option>
+                            <option>Baikingon</option>
+                            <option>Balulang</option>
+                            <option>Bayabas</option>
+                            <option>Bonbon</option>
+                            <option>Carmen Public Market</option>
+                            <option>Cogon Public Market</option>
+                            <option>Villa Verde</option>
+                            <option>Xavier Heights</option>
+                        </select>
 
-            <button class="back-button" data-go="home">
-                ← Back to Home
-            </button>
+                        <label for="passengerType">Passenger Type:</label>
+                        <select id="passengerType" required>
+                            <option value="regular">Regular Passenger</option>
+                            <option value="discount">Student</option>
+                            <option value="discount">Senior Citizen</option>
+                            <option value="discount">Person with Disability (PWD)</option>
+                        </select>
 
-            <h1>🕒 CDO Public Transportation Schedule</h1>
+                        <button type="submit" class="form-button">Find Route</button>
+                    </form>
 
-            <p>
-                Check the estimated operating hours of public
-                transportation routes in Cagayan de Oro City.
-            </p>
+                    <div id="routeResult" class="form-result" aria-live="polite">
+                        Your route information will appear here.
+                    </div>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Transport / Route</th>
-                            <th>Operating Hours</th>
-                            <th>Operating Days</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
+                    <p class="notice">
+                        Note: Route details and distances are shown only where information
+                        has been entered in the route database. Please verify route details
+                        before travelling.
+                    </p>
 
-                    <tbody>
-                        <tr>
-                            <td>OROTSCO (Bugo–Igpit)</td>
-                            <td>4:00 AM – 11:00 PM</td>
-                            <td>Daily</td>
-                            <td>
-                                Connects eastern and western areas
-                                of CDO through the main highway.
-                            </td>
-                        </tr>
+                    <p>
+                        <a href="https://cagayandeoro.gov.ph/" target="_blank"
+                           rel="noopener noreferrer">Cagayan de Oro City Official Website</a>
+                    </p>
+                </div>
+            </section>
 
-                        <tr>
-                            <td>Carmen Routes</td>
-                            <td>5:00 AM – 11:00 PM*</td>
-                            <td>Daily*</td>
-                            <td>Standard intra-city transportation.</td>
-                        </tr>
+            <!-- ESTIMATED FARE PAGE -->
+            <section id="estimated-fare" class="page">
+                <button class="back-button" data-go="home">← Back to Home</button>
+                <h1>💰 Estimated Jeepney Fares</h1>
+                <p>Enter your estimated travel distance to calculate a reference fare.</p>
 
-                        <tr>
-                            <td>Cogon Routes</td>
-                            <td>5:00 AM – 11:00 PM*</td>
-                            <td>Daily*</td>
-                            <td>
-                                Serves commuters traveling to and
-                                from the Cogon area.
-                            </td>
-                        </tr>
+                <div class="content-card">
+                    <h2>Traditional Jeepney</h2>
+                    <p>Minimum fare: ₱14 for the first 4 km.</p>
+                    <p>Additional distance: ₱2 per kilometer after 4 km.</p>
 
-                        <tr>
-                            <td>Balulang Routes</td>
-                            <td>5:00 AM – 11:00 PM*</td>
-                            <td>Daily*</td>
-                            <td>
-                                Serves Balulang and nearby destinations.
-                            </td>
-                        </tr>
+                    <hr>
 
-                        <tr>
-                            <td>Uptown Routes</td>
-                            <td>5:00 AM – 11:00 PM*</td>
-                            <td>Daily*</td>
-                            <td>
-                                Connects Uptown with other parts
-                                of the city.
-                            </td>
-                        </tr>
+                    <h2>Modern Jeepney</h2>
+                    <p>Minimum fare: ₱17 for the first 4 km.</p>
+                    <p>Additional distance: ₱2.40 per kilometer after 4 km.</p>
 
-                        <tr>
-                            <td>Lapasan Routes</td>
-                            <td>5:00 AM – 11:00 PM*</td>
-                            <td>Daily*</td>
-                            <td>
-                                Serves commuters traveling to and
-                                from Lapasan.
-                            </td>
-                        </tr>
+                    <hr>
 
-                        <tr>
-                            <td>LPTC (Lumbia)</td>
-                            <td>Around 5:00 AM – 10:00/11:00 PM*</td>
-                            <td>Daily*</td>
-                            <td>
-                                Typical hours; confirm the specific
-                                route schedule.
-                            </td>
-                        </tr>
+                    <form id="fareForm">
+                        <label for="distance">Estimated Distance (kilometers):</label>
+                        <input type="number" id="distance" min="0.1" step="0.1"
+                               placeholder="Enter distance, e.g. 6" required>
 
-                        <tr>
-                            <td>
-                                United Transport Cooperative
-                                (Buena Oro, Barra, Iponan)
-                            </td>
-                            <td>Around 5:00 AM – 10:00/11:00 PM*</td>
-                            <td>Daily*</td>
-                            <td>
-                                Hours may differ depending on the route.
-                            </td>
-                        </tr>
+                        <label for="vehicleType">Jeepney Type:</label>
+                        <select id="vehicleType">
+                            <option value="traditional">Traditional Jeepney</option>
+                            <option value="modern">Modern Jeepney</option>
+                        </select>
 
-                        <tr>
-                            <td>Balulang Transport Service Cooperative</td>
-                            <td>Around 5:00 AM – 10:00/11:00 PM*</td>
-                            <td>Daily*</td>
-                            <td>
-                                Typical hours; confirm with the cooperative.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                        <label for="farePassenger">Passenger Type:</label>
+                        <select id="farePassenger">
+                            <option value="regular">Regular Passenger</option>
+                            <option value="discount">Student</option>
+                            <option value="discount">Senior Citizen</option>
+                            <option value="discount">Person with Disability (PWD)</option>
+                        </select>
 
-            <div class="content-card">
-                <h2>Peak Hours</h2>
-                <p><strong>Morning:</strong> 7:00 AM – 9:00 AM</p>
-                <p><strong>Afternoon:</strong> 4:30 PM – 6:30 PM</p>
-                <p>
-                    These are common rush-hour periods when more
-                    commuters may be traveling to school, work, and home.
-                </p>
-            </div>
+                        <button type="submit" class="form-button">Calculate Estimated Fare</button>
+                    </form>
 
-            <div class="note">
-                <strong>Reminder:</strong> Operating hours are estimates
-                and may vary by route and transport operator. Schedules
-                may change because of traffic, weather, holidays, or
-                operator announcements. Please confirm the latest
-                schedule with the respective cooperative. An asterisk (*)
-                indicates estimated general hours.
-            </div>
+                    <div id="fareResult" class="form-result" aria-live="polite">
+                        Your estimated fare will appear here.
+                    </div>
 
-        </section>
+                    <p class="notice">
+                        These calculations use the reference rates listed on this page.
+                        They are estimates, not a guarantee of the official fare.
+                        Actual fare rules and eligible discounts should be verified before travel.
+                    </p>
+                </div>
+            </section>
 
-        <!-- ================= MAP PAGE ================= -->
+            <!-- SCHEDULE PAGE -->
+            <section id="schedule" class="page">
+                <button class="back-button" data-go="home">← Back to Home</button>
+                <h1>🕒 CDO Public Transportation Schedule</h1>
+                <p>Check the estimated operating hours of public transportation routes in Cagayan de Oro City.</p>
 
-        <section id="map-page" class="page">
-
-            <button class="back-button" data-go="home">
-                ← Back to Home
-            </button>
-
-            <h1>🗺️ Cagayan de Oro City Map</h1>
-
-            <p>
-                Explore places and view the map around Cagayan de Oro City.
-            </p>
-
-            <div class="content-card">
-                <div id="map">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Cagayan%20de%20Oro%20City%2C%20Philippines&z=13&output=embed"
-                        title="Google Map of Cagayan de Oro City"
-                        loading="lazy"
-                        allowfullscreen
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Transport / Route</th>
+                                <th>Operating Hours</th>
+                                <th>Operating Days</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>OROTSCO (Bugo–Igpit)</td>
+                                <td>4:00 AM – 11:00 PM</td>
+                                <td>Daily</td>
+                                <td>Connects eastern and western areas of CDO through the main highway.</td>
+                            </tr>
+                            <tr>
+                                <td>Carmen Routes</td>
+                                <td>5:00 AM – 11:00 PM*</td>
+                                <td>Daily*</td>
+                                <td>Standard intra-city transportation.</td>
+                            </tr>
+                            <tr>
+                                <td>Cogon Routes</td>
+                                <td>5:00 AM – 11:00 PM*</td>
+                                <td>Daily*</td>
+                                <td>Serves commuters traveling to and from the Cogon area.</td>
+                            </tr>
+                            <tr>
+                                <td>Balulang Routes</td>
+                                <td>5:00 AM – 11:00 PM*</td>
+                                <td>Daily*</td>
+                                <td>Serves Balulang and nearby destinations.</td>
+                            </tr>
+                            <tr>
+                                <td>Uptown Routes</td>
+                                <td>5:00 AM – 11:00 PM*</td>
+                                <td>Daily*</td>
+                                <td>Connects Uptown with other parts of the city.</td>
+                            </tr>
+                            <tr>
+                                <td>Lapasan Routes</td>
+                                <td>5:00 AM – 11:00 PM*</td>
+                                <td>Daily*</td>
+                                <td>Serves commuters traveling to and from Lapasan.</td>
+                            </tr>
+                            <tr>
+                                <td>LPTC (Lumbia)</td>
+                                <td>Around 5:00 AM – 10:00/11:00 PM*</td>
+                                <td>Daily*</td>
+                                <td>Typical hours; confirm the specific route schedule.</td>
+                            </tr>
+                            <tr>
+                                <td>United Transport Cooperative (Buena Oro, Barra, Iponan)</td>
+                                <td>Around 5:00 AM – 10:00/11:00 PM*</td>
+                                <td>Daily*</td>
+                                <td>Hours may differ depending on the route.</td>
+                            </tr>
+                            <tr>
+                                <td>Balulang Transport Service Cooperative</td>
+                                <td>Around 5:00 AM – 10:00/11:00 PM*</td>
+                                <td>Daily*</td>
+                                <td>Typical hours; confirm with the cooperative.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <p class="notice">
-                    An internet connection is needed to load the map.
-                    This map shows Cagayan de Oro City generally and
-                    does not yet display your selected jeepney route.
-                </p>
+                <div class="content-card">
+                    <h2>Peak Hours</h2>
+                    <p><strong>Morning:</strong> 7:00 AM – 9:00 AM</p>
+                    <p><strong>Afternoon:</strong> 4:30 PM – 6:30 PM</p>
+                    <p>These are common rush-hour periods when more commuters may be traveling to school, work, and home.</p>
+                </div>
 
-                <a class="primary-button"
-                   href="https://www.google.com/maps/search/?api=1&query=Cagayan+de+Oro+City"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Open Google Maps
-                </a>
-            </div>
+                <div class="note">
+                    <strong>Reminder:</strong> Operating hours are estimates and may vary by route and transport operator.
+                    Schedules may change because of traffic, weather, holidays, or operator announcements.
+                    Please confirm the latest schedule with the respective cooperative.
+                    An asterisk (*) indicates estimated general hours.
+                </div>
+            </section>
 
-        </section>
+            <!-- MAP PAGE -->
+            <section id="map-page" class="page">
+                <button class="back-button" data-go="home">← Back to Home</button>
+                <h1>🗺️ Cagayan de Oro City Map</h1>
+                <p>Explore places and view the map around Cagayan de Oro City.</p>
 
-        <!-- ================= ABOUT US PAGE ================= -->
+                <div class="content-card">
+                    <div id="map">
+                        <iframe
+                            src="https://maps.google.com/maps?q=Cagayan%20de%20Oro%20City%2C%20Philippines&z=13&output=embed"
+                            title="Google Map of Cagayan de Oro City"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
 
-        <section id="about" class="page">
+                    <p class="notice">
+                        An internet connection is needed to load the map.
+                        This map shows Cagayan de Oro City generally and does not yet display your selected jeepney route.
+                    </p>
 
-            <button class="back-button" data-go="home">
-                ← Back to Home
-            </button>
+                    <a class="primary-button"
+                       href="https://www.google.com/maps/search/?api=1&query=Cagayan+de+Oro+City"
+                       target="_blank" rel="noopener noreferrer">Open Google Maps</a>
+                </div>
+            </section>
 
-            <h1>About Us</h1>
+            <!-- ABOUT US PAGE -->
+            <section id="about" class="page">
+                <button class="back-button" data-go="home">← Back to Home</button>
+                <h1>About Us</h1>
 
-            <div class="about-card">
-                <h3>Who We Are</h3>
-                <p>
-                    Welcome to Xander The Explorer - Smart Transit System!
-                    We are students who created this website to help
-                    commuters in Cagayan de Oro City find public
-                    transportation routes more easily.
-                </p>
-            </div>
+                <div class="about-card">
+                    <h3>Who We Are</h3>
+                    <p>
+                        Welcome to Xander The Explorer - Smart Transit System!
+                        We are students who created this website to help commuters
+                        in Cagayan de Oro City find public transportation routes more easily.
+                    </p>
+                </div>
 
-            <div class="about-card">
-                <h3>What We Do</h3>
-                <p>
-                    Our website aims to provide useful information about
-                    public transportation routes, starting points,
-                    destinations, estimated fares, distances, and roads
-                    passed. It helps commuters become more familiar with
-                    routes and plan their trips more conveniently.
-                </p>
-            </div>
+                <div class="about-card">
+                    <h3>What We Do</h3>
+                    <p>
+                        Our website aims to provide useful information about public transportation
+                        routes, starting points, destinations, estimated fares, distances, and roads passed.
+                        It helps commuters become more familiar with routes and plan their trips more conveniently.
+                    </p>
+                </div>
 
-            <div class="about-card">
-                <h3>Our Mission</h3>
-                <p>
-                    To provide accessible and easy-to-understand public
-                    transportation information for commuters in
-                    Cagayan de Oro City.
-                </p>
-            </div>
+                <div class="about-card">
+                    <h3>Our Mission</h3>
+                    <p>
+                        To provide accessible and easy-to-understand public transportation information
+                        for commuters in Cagayan de Oro City.
+                    </p>
+                </div>
 
-            <div class="about-card">
-                <h3>Our Vision</h3>
-                <p>
-                    To become a helpful guide for commuters by making
-                    public transportation information easier to find
-                    and understand. We want to help people travel around
-                    Cagayan de Oro City with greater convenience
-                    and confidence.
-                </p>
-            </div>
+                <div class="about-card">
+                    <h3>Our Vision</h3>
+                    <p>
+                        To become a helpful guide for commuters by making public transportation information
+                        easier to find and understand. We want to help people travel around Cagayan de Oro City
+                        with greater convenience and confidence.
+                    </p>
+                </div>
 
-            <div class="about-card">
-                <h3>Our Purpose</h3>
-                <p>
-                    Our purpose is to help students, workers, residents,
-                    and visitors find suitable public transportation
-                    routes. Through this website, we aim to make
-                    commuting simpler and help users plan their journeys.
-                </p>
-            </div>
+                <div class="about-card">
+                    <h3>Our Purpose</h3>
+                    <p>
+                        Our purpose is to help students, workers, residents, and visitors find suitable public
+                        transportation routes. Through this website, we aim to make commuting simpler and help users plan their journeys.
+                    </p>
+                </div>
 
-            <footer>
-                &copy; 2026 Xander The Explorer - Smart Transit System
-            </footer>
+                <footer>&copy; 2026 Xander The Explorer - Smart Transit System</footer>
+            </section>
 
-        </section>
-
-    </main>
+        </main>
     </div>
 
-    <!-- ================= JAVASCRIPT ================= -->
-
+    <!-- JAVASCRIPT -->
     <script>
-
-        // DEMO ADMIN LOGIN: frontend-only, not secure authentication
+        // DEMO ADMIN LOGIN
         var loginForm = document.getElementById("loginForm");
         var loginScreen = document.getElementById("loginScreen");
         var appShell = document.getElementById("appShell");
@@ -1150,28 +1018,33 @@
             }
         });
 
-        // LIGHT AND DARK THEME SWITCH
+        // LIGHT AND DARK THEME
         var themeToggle = document.getElementById("themeToggle");
 
         function setTheme(isDark) {
             document.body.classList.toggle("dark-theme", isDark);
+
             themeToggle.textContent = isDark
                 ? "☀️ Switch to Light Mode"
                 : "🌙 Switch to Dark Mode";
+
             themeToggle.setAttribute("aria-pressed", String(isDark));
+
             try {
                 localStorage.setItem("xanderTheme", isDark ? "dark" : "light");
             } catch (error) {
-                // Theme still works for this page if storage is unavailable.
+                // The theme still works if storage is unavailable.
             }
         }
 
         var savedTheme = "light";
+
         try {
             savedTheme = localStorage.getItem("xanderTheme") || "light";
         } catch (error) {
             savedTheme = "light";
         }
+
         setTheme(savedTheme === "dark");
 
         themeToggle.addEventListener("click", function() {
@@ -1179,14 +1052,11 @@
         });
 
         // SWITCH BETWEEN PAGES
-
         function showPage(pageId) {
             var pages = document.querySelectorAll(".page");
             var links = document.querySelectorAll(".nav-link");
 
-            var selectedPage = document.getElementById(pageId);
-
-            if (!selectedPage) {
+            if (!document.getElementById(pageId)) {
                 pageId = "home";
             }
 
@@ -1208,7 +1078,6 @@
         }
 
         // SIDEBAR NAVIGATION
-
         document.querySelectorAll(".nav-link").forEach(function(link) {
             link.addEventListener("click", function(event) {
                 event.preventDefault();
@@ -1216,184 +1085,370 @@
                 var pageId = this.getAttribute("data-page");
 
                 showPage(pageId);
-
                 history.replaceState(null, "", "#" + pageId);
             });
         });
 
         // DASHBOARD CARDS AND BACK BUTTONS
-
         document.querySelectorAll("[data-go]").forEach(function(button) {
             button.addEventListener("click", function() {
                 var pageId = this.getAttribute("data-go");
 
                 showPage(pageId);
-
                 history.replaceState(null, "", "#" + pageId);
             });
         });
 
-        // OPEN A PAGE FROM ITS URL HASH
-
+        // OPEN PAGE FROM URL HASH
         var startingPage = window.location.hash.substring(1);
 
         if (startingPage && document.getElementById(startingPage)) {
             showPage(startingPage);
         }
 
-        // FIND ROUTE FORM
-
-        document.getElementById("routeForm").addEventListener(
-            "submit",
-            function(event) {
-                event.preventDefault();
-
-                var start =
-                    document.getElementById("startingPoint").value;
-
-                var destination =
-                    document.getElementById("destination").value;
-
-                var passengerSelect =
-                    document.getElementById("passengerType");
-
-                var passenger =
-                    passengerSelect.options[
-                        passengerSelect.selectedIndex
-                    ].text;
-
-                var result =
-                    document.getElementById("routeResult");
-
-                if (start === destination) {
-                    result.textContent =
-                        "Please choose different starting and destination points.";
-                    return;
-                }
-
-                result.innerHTML = "";
-
-                var heading = document.createElement("h3");
-                heading.textContent = "Route Information";
-                result.appendChild(heading);
-
-                var startInfo = document.createElement("p");
-                startInfo.textContent = "Starting point: " + start;
-                result.appendChild(startInfo);
-
-                var destinationInfo = document.createElement("p");
-                destinationInfo.textContent =
-                    "Destination: " + destination;
-                result.appendChild(destinationInfo);
-
-                var passengerInfo = document.createElement("p");
-                passengerInfo.textContent =
-                    "Passenger type: " + passenger;
-                result.appendChild(passengerInfo);
-
-                var message = document.createElement("p");
-                message.textContent =
-                    "Your selections have been recorded. A verified route, " +
-                    "distance, and fare cannot be displayed until the official " +
-                    "route information is added to the system.";
-                result.appendChild(message);
+        // ROUTE DATABASE
+        // Inbound: local area to named market/terminal.
+        // Outbound: named market/terminal back to local area.
+        var routeDatabase = [
+            {
+                name: "Bayabas R4 – Carmen Public Market",
+                area: "Bayabas",
+                terminal: "Carmen Public Market",
+                inbound: 10.5,
+                outbound: 7.3,
+                roads: "Bayabas Road, Coastal Road, Saarenas Ave., CM Recto Ave., PN Roa Ave., Vamenta Blvd., Seriña St., Villarin St., Max Suniel St."
+            },
+            {
+                name: "Bayabas R5 – Agora Terminal",
+                area: "Bayabas",
+                terminal: "Agora Market City and Terminal",
+                inbound: 9.1,
+                outbound: 4.5,
+                roads: "Bayabas Road, San Pedro St., RN Pelaez Blvd., Vamenta Blvd., Max Suniel St., JR Borja Ave., Roxas St., Yacapin St., Quirino St., Ramonal St., Limketkai Drive, Valenzuela Ave."
+            },
+            {
+                name: "Bonbon R1 – Cogon Public Market",
+                area: "Bonbon",
+                terminal: "Cogon Public Market",
+                inbound: 6.1,
+                outbound: 5.4,
+                roads: "Bonbon Road, RN Pelaez Blvd., Marcos Bridge, Capistrano St., T. Chaves St., Corrales Ave., Hayes St., Daumar St."
+            },
+            {
+                name: "Bonbon R2 – Carmen Public Market",
+                area: "Bonbon",
+                terminal: "Carmen Public Market",
+                inbound: 8.3,
+                outbound: 4.9,
+                roads: "Bonbon Road, Bonbon–Pasil Road, The Baptist Extension, The Baptist St., RN Pelaez Blvd., Vamenta Blvd., Masterson Ave., C. Diel St., Villarin St., Max Suniel St."
+            },
+            {
+                name: "Bonbon R4 – Carmen Public Market",
+                area: "Bonbon",
+                terminal: "Carmen Public Market",
+                inbound: 12.7,
+                outbound: 12.4,
+                roads: "Bonbon Road, Bonbon–Pasil Road, John the Baptist Extension, Saint Paul St., RN Pelaez Blvd., CM Recto Ave., Saarenas Ave., Coastal Road, PN Roa St., Vamenta Blvd."
+            },
+            {
+                name: "Bonbon R3 – Agora Market City and Terminal",
+                area: "Bonbon",
+                terminal: "Agora Market City and Terminal",
+                inbound: 9.8,
+                outbound: 4.1,
+                roads: "Road details need to be confirmed."
+            },
+            {
+                name: "Balulang R1 – Carmen Public Market",
+                area: "Balulang",
+                terminal: "Carmen Public Market",
+                roundTrip: 11.9,
+                roads: "One-way inbound and outbound distances have not been provided."
+            },
+            {
+                name: "Balulang R2 (Villa Verde) – Cogon Public Market",
+                area: "Villa Verde",
+                terminal: "Cogon Public Market",
+                roundTrip: 15.5,
+                roads: "One-way inbound and outbound distances have not been provided."
+            },
+            {
+                name: "Balulang R3 (Xavier Heights) – Cogon Public Market",
+                area: "Xavier Heights",
+                terminal: "Cogon Public Market",
+                roads: "Distance and road details have not been confirmed."
+            },
+            {
+                name: "Bayabas R1 – Cogon Public Market",
+                area: "Bayabas",
+                terminal: "Cogon Public Market",
+                roundTrip: 12.7,
+                roads: "One-way inbound and outbound distances have not been provided."
+            },
+            {
+                name: "Baikingon – Carmen Public Market",
+                area: "Baikingon",
+                terminal: "Carmen Public Market",
+                roads: "Distance and road details have not been confirmed."
             }
-        );
+        ];
+
+        // NORMALIZE LOCATION NAMES
+        function normalizeLocation(location) {
+            return location
+                .toLowerCase()
+                .replace(/public market/g, "")
+                .replace(/market city and terminal/g, "terminal")
+                .replace(/public/g, "")
+                .replace(/terminal/g, "")
+                .replace(/[^a-z0-9]/g, "")
+                .trim();
+        }
+
+        function sameLocation(first, second) {
+            return normalizeLocation(first) === normalizeLocation(second);
+        }
+
+        // FARE CALCULATION
+        function calculateFare(distance, vehicle, passenger) {
+            var baseFare;
+            var extraRate;
+
+            if (vehicle === "modern") {
+                baseFare = 17;
+                extraRate = 2.40;
+            } else {
+                baseFare = 14;
+                extraRate = 2;
+            }
+
+            var fare = baseFare;
+
+            if (distance > 4) {
+                fare = baseFare + ((distance - 4) * extraRate);
+            }
+
+            var fareBeforeDiscount = fare;
+
+            if (passenger === "discount") {
+                fare = fare * 0.80;
+            }
+
+            return {
+                beforeDiscount: Math.round(fareBeforeDiscount * 100) / 100,
+                total: Math.round(fare * 100) / 100
+            };
+        }
+
+        // ADD RESULT TEXT SAFELY
+        function addResultLine(container, label, value) {
+            var paragraph = document.createElement("p");
+            var strong = document.createElement("strong");
+
+            strong.textContent = label + " ";
+            paragraph.appendChild(strong);
+            paragraph.appendChild(document.createTextNode(value));
+            container.appendChild(paragraph);
+        }
+
+        // FIND ROUTE FORM
+        document.getElementById("routeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var start = document.getElementById("startingPoint").value;
+            var destination = document.getElementById("destination").value;
+            var passengerSelect = document.getElementById("passengerType");
+            var passenger = passengerSelect.value;
+            var passengerLabel = passengerSelect.options[passengerSelect.selectedIndex].text;
+            var result = document.getElementById("routeResult");
+
+            result.innerHTML = "";
+
+            if (sameLocation(start, destination)) {
+                result.textContent = "Please choose different starting and destination points.";
+                return;
+            }
+
+            var matches = [];
+
+            routeDatabase.forEach(function(route) {
+                var fromAreaToTerminal =
+                    sameLocation(start, route.area) &&
+                    sameLocation(destination, route.terminal);
+
+                var fromTerminalToArea =
+                    sameLocation(start, route.terminal) &&
+                    sameLocation(destination, route.area);
+
+                if (fromAreaToTerminal || fromTerminalToArea) {
+                    matches.push({
+                        route: route,
+                        direction: fromAreaToTerminal ? "inbound" : "outbound"
+                    });
+                }
+            });
+
+            var heading = document.createElement("h3");
+            heading.textContent = "Route Information";
+            result.appendChild(heading);
+
+            addResultLine(result, "Starting point:", start);
+            addResultLine(result, "Destination:", destination);
+            addResultLine(result, "Passenger type:", passengerLabel);
+
+            if (matches.length === 0) {
+                var noRoute = document.createElement("p");
+
+                noRoute.textContent =
+                    "No matching route is currently listed for these locations. " +
+                    "The route database does not contain enough verified information " +
+                    "for this trip, so a route or distance will not be invented.";
+
+                result.appendChild(noRoute);
+                return;
+            }
+
+            matches.forEach(function(match, index) {
+                var route = match.route;
+                var direction = match.direction;
+                var routeTitle = document.createElement("h3");
+
+                routeTitle.textContent = matches.length > 1
+                    ? "Option " + (index + 1) + ": " + route.name
+                    : route.name;
+
+                result.appendChild(routeTitle);
+
+                if (typeof route[direction] === "number") {
+                    var distance = route[direction];
+
+                    addResultLine(
+                        result,
+                        "Distance:",
+                        distance.toFixed(1) + " km (" + direction + ")"
+                    );
+
+                    addResultLine(result, "Roads passed:", route.roads);
+
+                    var traditionalFare = calculateFare(distance, "traditional", passenger);
+
+                    addResultLine(
+                        result,
+                        "Traditional jeepney estimated fare:",
+                        "₱" + traditionalFare.total.toFixed(2)
+                    );
+
+                    var modernFare = calculateFare(distance, "modern", passenger);
+
+                    addResultLine(
+                        result,
+                        "Modern jeepney estimated fare:",
+                        "₱" + modernFare.total.toFixed(2)
+                    );
+
+                    var useFareButton = document.createElement("button");
+                    useFareButton.type = "button";
+                    useFareButton.className = "primary-button";
+                    useFareButton.textContent = "Use this distance in Estimated Fare";
+                    useFareButton.style.marginTop = "8px";
+
+                    useFareButton.addEventListener("click", function() {
+                        document.getElementById("distance").value = distance.toFixed(1);
+                        document.getElementById("farePassenger").value = passenger;
+
+                        showPage("estimated-fare");
+                        history.replaceState(null, "", "#estimated-fare");
+
+                        document.getElementById("fareResult").textContent =
+                            "Route distance loaded. Choose a jeepney type and calculate the fare.";
+                    });
+
+                    result.appendChild(useFareButton);
+                } else if (typeof route.roundTrip === "number") {
+                    addResultLine(
+                        result,
+                        "Recorded distance:",
+                        route.roundTrip.toFixed(1) + " km round trip"
+                    );
+
+                    var warning = document.createElement("p");
+                    warning.textContent =
+                        "A one-way distance has not been provided, so this round-trip " +
+                        "distance will not be used to calculate a one-way fare.";
+
+                    result.appendChild(warning);
+                    addResultLine(result, "Route information:", route.roads);
+                } else {
+                    addResultLine(result, "Route information:", route.roads);
+
+                    var missing = document.createElement("p");
+                    missing.textContent =
+                        "A confirmed distance is not available, so an estimated fare cannot be calculated for this route yet.";
+
+                    result.appendChild(missing);
+                }
+            });
+
+            var note = document.createElement("p");
+            note.className = "notice";
+            note.textContent =
+                "Fare amounts are reference estimates based on the rates shown on this website. " +
+                "They are not official fare quotations. Please verify route distances and current fares.";
+
+            result.appendChild(note);
+        });
 
         // ESTIMATED FARE CALCULATOR
+        document.getElementById("fareForm").addEventListener("submit", function(event) {
+            event.preventDefault();
 
-        document.getElementById("fareForm").addEventListener(
-            "submit",
-            function(event) {
-                event.preventDefault();
+            var distance = parseFloat(document.getElementById("distance").value);
+            var vehicle = document.getElementById("vehicleType").value;
+            var passenger = document.getElementById("farePassenger").value;
+            var result = document.getElementById("fareResult");
 
-                var distance =
-                    parseFloat(document.getElementById("distance").value);
+            result.innerHTML = "";
 
-                var vehicle =
-                    document.getElementById("vehicleType").value;
-
-                var passenger =
-                    document.getElementById("farePassenger").value;
-
-                var result =
-                    document.getElementById("fareResult");
-
-                if (isNaN(distance) || distance <= 0) {
-                    result.textContent =
-                        "Please enter a distance greater than zero.";
-                    return;
-                }
-
-                var baseFare;
-                var extraRate;
-
-                if (vehicle === "traditional") {
-                    baseFare = 14;
-                    extraRate = 2;
-                } else {
-                    baseFare = 17;
-                    extraRate = 2.40;
-                }
-
-                var fare = baseFare;
-
-                if (distance > 4) {
-                    fare = baseFare + ((distance - 4) * extraRate);
-                }
-
-                var regularFare = fare;
-
-                if (passenger === "discount") {
-                    fare = fare * 0.80;
-                }
-
-                fare = Math.ceil(fare * 100) / 100;
-
-                result.innerHTML = "";
-
-                var heading = document.createElement("h3");
-                heading.textContent = "Estimated Fare Result";
-                result.appendChild(heading);
-
-                var distanceInfo = document.createElement("p");
-                distanceInfo.textContent =
-                    "Distance: " + distance.toFixed(1) + " km";
-                result.appendChild(distanceInfo);
-
-                var vehicleInfo = document.createElement("p");
-                vehicleInfo.textContent =
-                    "Jeepney type: " +
-                    (vehicle === "traditional"
-                        ? "Traditional Jeepney"
-                        : "Modern Jeepney");
-                result.appendChild(vehicleInfo);
-
-                var fareInfo = document.createElement("p");
-                fareInfo.textContent =
-                    "Fare before discount: ₱" +
-                    regularFare.toFixed(2);
-                result.appendChild(fareInfo);
-
-                if (passenger === "discount") {
-                    var discountInfo = document.createElement("p");
-                    discountInfo.textContent =
-                        "Reference discount: 20%";
-                    result.appendChild(discountInfo);
-                }
-
-                var total = document.createElement("h3");
-                total.textContent =
-                    "Estimated Total: ₱" + fare.toFixed(2);
-                result.appendChild(total);
-
-                var note = document.createElement("p");
-                note.textContent =
-                    "This is a reference calculation. Actual fares, " +
-                    "rounding rules, and discount eligibility may differ.";
-                result.appendChild(note);
+            if (isNaN(distance) || distance <= 0) {
+                result.textContent = "Please enter a distance greater than zero.";
+                return;
             }
-        );
+
+            var fareDetails = calculateFare(distance, vehicle, passenger);
+
+            var heading = document.createElement("h3");
+            heading.textContent = "Estimated Fare Result";
+            result.appendChild(heading);
+
+            addResultLine(result, "Distance:", distance.toFixed(1) + " km");
+
+            addResultLine(
+                result,
+                "Jeepney type:",
+                vehicle === "traditional" ? "Traditional Jeepney" : "Modern Jeepney"
+            );
+
+            addResultLine(
+                result,
+                "Fare before discount:",
+                "₱" + fareDetails.beforeDiscount.toFixed(2)
+            );
+
+            if (passenger === "discount") {
+                addResultLine(result, "Reference discount:", "20%");
+            }
+
+            var total = document.createElement("h3");
+            total.textContent = "Estimated Total: ₱" + fareDetails.total.toFixed(2);
+            result.appendChild(total);
+
+            var note = document.createElement("p");
+            note.textContent =
+                "This is a reference calculation using the rates shown on this page. " +
+                "Actual fares, rounding rules, and discount eligibility may differ.";
+
+            result.appendChild(note);
+        });
     </script>
 
 </body>
